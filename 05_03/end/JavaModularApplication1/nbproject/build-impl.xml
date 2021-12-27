@@ -447,7 +447,7 @@ is divided into following sections:
       <element name="customize" optional="true"/>
       <sequential>
         <j2semodularproject1:junit-prototype
-            xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1">
+          xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1">
           <customizePrototype>
             <test methods="@{testmethods}" name="@{testincludes}" todir="${build.test.results.dir}"/>
             <customize/>
@@ -466,7 +466,7 @@ is divided into following sections:
       <element name="customize" optional="true"/>
       <sequential>
         <j2semodularproject1:junit-prototype
-            xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1">
+          xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1">
           <customizePrototype>
             <batchtest todir="${build.test.results.dir}">
               <mappedresources>
@@ -661,8 +661,8 @@ is divided into following sections:
       <attribute default="" name="testMethod"/>
       <sequential>
         <j2semodularproject1:test-debug-impl
-            xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1" excludes="@{excludes}"
-            includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
+          xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1" excludes="@{excludes}"
+          includes="@{includes}" testincludes="@{testincludes}" testmethods="@{testmethods}">
           <customizeDebuggee>
             <jvmarg line="${run.jvmargs}"/>
             <jvmarg line="${run.jvmargs.ide}"/>
@@ -681,8 +681,8 @@ is divided into following sections:
       <attribute default="" name="testMethod"/>
       <sequential>
         <j2semodularproject1:testng-debug-impl
-            xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1" testClass="@{testClass}"
-            testMethod="@{testMethod}">
+          xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1" testClass="@{testClass}"
+          testMethod="@{testMethod}">
           <customize2>
             <syspropertyset>
               <propertyref prefix="test-sys-prop."/>
@@ -868,8 +868,8 @@ is divided into following sections:
     <property name="ap.cmd.line.internal" value=""/>
   </target>
   <target
-      depends="-pre-init,-init-private,-init-user,-init-project,-do-init,-post-init,-init-check,-init-macrodef-property,-init-macrodef-javac-depend,-init-macrodef-test,-init-macrodef-test-debug,-init-macrodef-nbjpda,-init-macrodef-debug,-init-macrodef-java,-init-presetdef-jar,-init-ap-cmdline"
-      name="init"/>
+    depends="-pre-init,-init-private,-init-user,-init-project,-do-init,-post-init,-init-check,-init-macrodef-property,-init-macrodef-javac-depend,-init-macrodef-test,-init-macrodef-test-debug,-init-macrodef-nbjpda,-init-macrodef-debug,-init-macrodef-java,-init-presetdef-jar,-init-ap-cmdline"
+    name="init"/>
   <!--
               ===================
               COMPILATION SECTION
@@ -1079,8 +1079,8 @@ is divided into following sections:
     <!-- You can override this target in the ../build.xml file. -->
   </target>
   <target
-      depends="init,deps-jar,-verify-automatic-build,-pre-pre-compile,-pre-compile-single,-do-compile-single,-post-compile-single"
-      name="compile-single"/>
+    depends="init,deps-jar,-verify-automatic-build,-pre-pre-compile,-pre-compile-single,-do-compile-single,-post-compile-single"
+    name="compile-single"/>
   <!--
               ====================
               JAR BUILDING SECTION
@@ -1279,8 +1279,8 @@ is divided into following sections:
     <pathconvert property="module.name">
       <fileset dir="${run.modules.dir}" includes="**/${toString:main.class.relativepath}"/>
       <regexpmapper
-          from="\Q${run.modules.dir.location}${file.separator}\E([^${file.separator.string}]+)\Q${file.separator}\E.*\.class"
-          to="\1"/>
+        from="\Q${run.modules.dir.location}${file.separator}\E([^${file.separator.string}]+)\Q${file.separator}\E.*\.class"
+        to="\1"/>
     </pathconvert>
   </target>
   <target depends="-main-module-set" name="-main-module-check">
@@ -1661,8 +1661,8 @@ is divided into following sections:
                                 srcdir="${test.src.dir}"/>
   </target>
   <target
-      depends="init,deps-jar,compile,-init-test-module-properties,-pre-pre-compile-test,-pre-compile-test,-compile-test-depend"
-      if="have.tests" name="-do-compile-test">
+    depends="init,deps-jar,compile,-init-test-module-properties,-pre-pre-compile-test,-pre-compile-test,-compile-test-depend"
+    if="have.tests" name="-do-compile-test">
     <j2semodularproject1:test-javac xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1"/>
     <j2semodularproject1:modsource_regexp xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1"
                                           filePattern="(.*$)" modsource="${test.src.dir.path}"
@@ -1704,8 +1704,8 @@ is divided into following sections:
     <!-- You can override this target in the ../build.xml file. -->
   </target>
   <target
-      depends="init,compile,-pre-pre-compile-test,-pre-compile-test-single,-do-compile-test-single,-post-compile-test-single"
-      name="compile-test-single"/>
+    depends="init,compile,-pre-pre-compile-test,-pre-compile-test-single,-do-compile-test-single,-post-compile-test-single"
+    name="compile-test-single"/>
   <!--
               =======================
               TEST EXECUTION SECTION
@@ -1743,8 +1743,8 @@ is divided into following sections:
     <fail if="tests.failed" unless="ignore.failing.tests">Some tests failed; see details above.</fail>
   </target>
   <target
-      depends="init,compile-test-single,-init-test-run-module-properties,-pre-test-run-single,-do-test-run-single,-post-test-run-single"
-      description="Run single unit test." name="test-single"/>
+    depends="init,compile-test-single,-init-test-run-module-properties,-pre-test-run-single,-do-test-run-single,-post-test-run-single"
+    description="Run single unit test." name="test-single"/>
   <target depends="init,compile-test-single,-pre-test-run-single" if="have.tests" name="-do-test-run-single-method">
     <fail unless="test.class">Must select some files in the IDE or set test.class</fail>
     <fail unless="test.method">Must select some method in the IDE or set test.method</fail>
@@ -1756,8 +1756,8 @@ is divided into following sections:
     <fail if="tests.failed" unless="ignore.failing.tests">Some tests failed; see details above.</fail>
   </target>
   <target
-      depends="init,compile-test-single,-init-test-run-module-properties,-pre-test-run-single,-do-test-run-single-method,-post-test-run-single-method"
-      description="Run single unit test." name="test-single-method"/>
+    depends="init,compile-test-single,-init-test-run-module-properties,-pre-test-run-single,-do-test-run-single-method,-post-test-run-single-method"
+    description="Run single unit test." name="test-single-method"/>
   <!--
               =======================
               TEST DEBUGGING SECTION
@@ -1784,11 +1784,11 @@ is divided into following sections:
                                      classpath="${debug.test.classpath}" name="${test.class}"/>
   </target>
   <target
-      depends="init,compile-test-single,-init-test-run-module-properties,-debug-start-debugger-test,-debug-start-debuggee-test"
-      name="debug-test"/>
+    depends="init,compile-test-single,-init-test-run-module-properties,-debug-start-debugger-test,-debug-start-debuggee-test"
+    name="debug-test"/>
   <target
-      depends="init,compile-test-single,-init-test-run-module-properties,-debug-start-debugger-test,-debug-start-debuggee-test-method"
-      name="debug-test-method"/>
+    depends="init,compile-test-single,-init-test-run-module-properties,-debug-start-debugger-test,-debug-start-debuggee-test-method"
+    name="debug-test-method"/>
   <target depends="init,-pre-debug-fix,compile-test-single" if="netbeans.home" name="-do-debug-fix-test">
     <property name="debug.modules.dir" value="${build.test.modules.dir}"/>
     <j2semodularproject1:nbjpdareload xmlns:j2semodularproject1="http://www.netbeans.org/ns/j2se-modular-project/1"/>
